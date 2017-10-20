@@ -275,7 +275,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2058792916}
-  - {fileID: 1301477535}
   - {fileID: 1870704819}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -317,8 +316,7 @@ MonoBehaviour:
   - {fileID: 1065505916279772, guid: 5fd2ee4dd60298f41b41b1328bbfccc6, type: 2}
   - {fileID: 1813534236412604, guid: 92adbb07d924e734d81b87d47d836869, type: 2}
   spawnRadius: 0.05
-  leftSpawnPoint: {fileID: 1870704819}
-  rightSpawnPoint: {fileID: 1301477535}
+  waterSpawnPoint: {fileID: 1301477535}
   waterInterval: 0.06
   dropVelMin: 0.15
   dropVelMax: 2
@@ -737,7 +735,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1301477535}
   m_Layer: 0
-  m_Name: RightPoint
+  m_Name: WaterSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -749,12 +747,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1301477534}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.49, y: 4.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 613686733}
-  m_RootOrder: 1
+  m_Father: {fileID: 2058792916}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1662555962
 Prefab:
@@ -871,7 +869,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 613686733}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2058792915
 GameObject:
@@ -904,6 +902,7 @@ Transform:
   - {fileID: 1089473210}
   - {fileID: 1166575725}
   - {fileID: 718447613}
+  - {fileID: 1301477535}
   m_Father: {fileID: 613686733}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -10,8 +10,7 @@ namespace NitorInc.YuukaWater {
 
         public GameObject[] waterDrops;
         public float spawnRadius = 0.15f;
-        public Transform leftSpawnPoint;
-        public Transform rightSpawnPoint;
+        public Transform waterSpawnPoint;
         float direction = 1.0f;
         public float waterInterval = 0.1f;
         public float dropVelMin = 0.15f;
@@ -39,7 +38,7 @@ namespace NitorInc.YuukaWater {
 
         void Spawn() {
             Vector3 fuzz = Random.insideUnitCircle * spawnRadius;
-            Vector3 pos = direction > 0.0f ? rightSpawnPoint.position : leftSpawnPoint.position + fuzz;
+            Vector3 pos = waterSpawnPoint.position + fuzz;
             var drop = Instantiate(waterDrops[Random.Range(0, waterDrops.Length)], pos, Quaternion.identity).GetComponent<YuukaWaterWaterdrop>();
             Vector2 vel = new Vector2(Random.Range(dropVelMin, dropVelMax), 0.0f) * direction;
             vel.x += yuukaVel;
@@ -52,10 +51,6 @@ namespace NitorInc.YuukaWater {
         }
         public void TurnOff() {
             spawnTimer.Stop();
-        }
-
-        public void SetDirection (float dir) {
-            direction = dir;
         }
 
         public void UpdateYuukaVel (float vel) {
